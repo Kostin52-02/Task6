@@ -1,14 +1,21 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+    println("Enter first number:")
+    val digit1 = readlnOrNull() ?: return
+    println("Enter secod number:")
+    val digit2 = readlnOrNull() ?: return
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+    if (digit1.length == 1 && digit2.length == 1 && digit1 != digit2) {
+        val oddNumber1 = digit1 + digit2
+        val oddNumber2 = digit2 + digit1
+
+        if (digit1.toInt() % 2 != 0) {
+            println("an odd number: $oddNumber1")
+        } else if (digit2.toInt() % 2 != 0) {
+            println("an odd number: $oddNumber2")
+        } else {
+            println("it is impossible to create an odd number.")
+        }
+    } else {
+        println("please enter two different numbers.")
     }
 }
